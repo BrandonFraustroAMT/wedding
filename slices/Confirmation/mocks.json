@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Et in id commodo incididunt irure proident sunt proident. Dolore sint Lorem ea laborum laboris consectetur culpa anim culpa velit."
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "officer",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

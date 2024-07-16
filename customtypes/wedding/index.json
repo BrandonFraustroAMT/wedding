@@ -1,0 +1,86 @@
+{
+  "format": "page",
+  "id": "wedding",
+  "label": "Wedding",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Main",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "vision": {
+              "type": "SharedSlice"
+            },
+            "ubication": {
+              "type": "SharedSlice"
+            },
+            "timer": {
+              "type": "SharedSlice"
+            },
+            "slider": {
+              "type": "SharedSlice"
+            },
+            "schedule": {
+              "type": "SharedSlice"
+            },
+            "phrases": {
+              "type": "SharedSlice"
+            },
+            "our_moments": {
+              "type": "SharedSlice"
+            },
+            "main": {
+              "type": "SharedSlice"
+            },
+            "lodging": {
+              "type": "SharedSlice"
+            },
+            "gifs": {
+              "type": "SharedSlice"
+            },
+            "confirmation": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

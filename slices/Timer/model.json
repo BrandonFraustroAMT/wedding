@@ -1,0 +1,43 @@
+{
+  "id": "timer",
+  "type": "SharedSlice",
+  "name": "Timer",
+  "description": "Timer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "tittle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tittle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "subtittle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtittle",
+            "placeholder": ""
+          }
+        },
+        "image_decoration": {
+          "type": "Image",
+          "config": {
+            "label": "Image Decoration",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

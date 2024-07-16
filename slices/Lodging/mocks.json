@@ -1,0 +1,75 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur laborum do voluptate nisi Lorem veniam commodo cupidatat duis consectetur dolor adipisicing. Incididunt exercitation Lorem cillum nulla aute proident reprehenderit excepteur cupidatat deserunt veniam. Irure fugiat esse adipisicing quis sit quis exercitation cillum."
+						}
+					}
+				]
+			},
+			"imagedecoration": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+					"width": 5000,
+					"height": 4613
+				},
+				"url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+				"width": 5000,
+				"height": 4613,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"direction": {
+				"__TYPE__": "FieldContent",
+				"value": "gather",
+				"type": "Text"
+			},
+			"directionvalue": {
+				"__TYPE__": "FieldContent",
+				"value": "deeply",
+				"type": "Text"
+			},
+			"count": {
+				"__TYPE__": "FieldContent",
+				"value": "highest",
+				"type": "Text"
+			},
+			"countvalue": {
+				"__TYPE__": "FieldContent",
+				"value": "volume",
+				"type": "Text"
+			},
+			"linkbutton": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"labelbutton": {
+				"__TYPE__": "FieldContent",
+				"value": "quarter",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

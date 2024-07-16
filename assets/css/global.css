@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Adelia';
+  src: url('/static/fonts/adelia_3/adelia.otf') format('otf'),
+       url('/static/fonts/adelia_3/adelia.ttf') format('truetype');
+  
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+}
+
+h3 {
+}

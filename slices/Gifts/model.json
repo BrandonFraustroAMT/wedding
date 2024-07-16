@@ -1,0 +1,59 @@
+{
+  "id": "gifs",
+  "type": "SharedSlice",
+  "name": "Gifts",
+  "description": "Gifs",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "imagedecoration": {
+          "type": "Image",
+          "config": {
+            "label": "ImageDecoration",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "linkbutton": {
+          "type": "Link",
+          "config": {
+            "label": "LinkButton",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "labelbutton": {
+          "type": "Text",
+          "config": {
+            "label": "LabelButton",
+            "placeholder": ""
+          }
+        },
+        "imagedecoration2": {
+          "type": "Image",
+          "config": {
+            "label": "ImageDecoration2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

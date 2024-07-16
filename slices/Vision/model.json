@@ -1,0 +1,41 @@
+{
+  "id": "vision",
+  "type": "SharedSlice",
+  "name": "Vision",
+  "description": "Vision",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imagedecoration": {
+          "type": "Image",
+          "config": {
+            "label": "ImageDecoration",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "phrase1": {
+          "type": "Text",
+          "config": {
+            "label": "Phrase1",
+            "placeholder": ""
+          }
+        },
+        "prhase2": {
+          "type": "Text",
+          "config": {
+            "label": "Prhase2",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
