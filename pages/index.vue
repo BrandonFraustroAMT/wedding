@@ -43,7 +43,6 @@ const components = {
 
 const document = ref(null);
 const { client } = usePrismic();
-console.log(client)
 
 // Función para obtener datos de Prismic
 const fetchData = async () => {

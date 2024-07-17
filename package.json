@@ -13,6 +13,7 @@
   "dependencies": {
     "@prismicio/client": "^7.6.0",
     "@prismicio/vue": "^4.2.2",
+    "axios": "^1.7.2",
     "nuxt": "^3.12.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { type Content } from "@prismicio/client";
 import { ref } from "vue";
+import invitadosService from "../../services/invitados"
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -18,12 +19,51 @@ const showForm = ref(false);
 const name = ref('')
 const disabled = ref(false);
 const nameconfirm = ref('');
+const acompañante = ref('');
+const niños = ref('');
 const showMessage = ref(false);
+const namesInvitados = ref([]);
+const idFounded = ref(0);
+
+const invitados = async () => {
+  try {
+    const data = await invitadosService.getAll();
+    namesInvitados.value = data;
+  } catch (error) {
+    console.error('Error al obtener los invitados:', error);
+  }
+}
+invitados();
 
 const handleSubmit = () => {
-  nameconfirm.value = name.value;
+  const nameFounded = namesInvitados.value.find(inv => inv.nombre === name.value);
+  console.log(nameFounded);
+  if (nameFounded) {
+    nameconfirm.value = nameFounded.nombre;
+    acompañante.value = nameFounded.acompañante;
+    niños.value = nameFounded.niños;
+    idFounded.value = nameFounded.id;
+    // Aquí puedes realizar otras acciones según tu lógica
+  } else {
+    // Si no se encuentra el nombre en la lista de invitados
+    console.log('Nombre no encontrado en la lista de invitados');
+  }
 };
 
+const handleConfirm = async () => {
+  const newNoteObject = {
+    nombre: nameconfirm.value,
+    acompañante: acompañante.value,
+    niños: niños.value,
+    confirmacion: "SI",
+  }
+  try {
+    const data = await invitadosService.update(idFounded.value, newNoteObject);
+    console.log(data);
+  } catch (error) {
+    console.error('Error al confirmar los invitados:', error);
+  }
+}
 </script>
 
 <template>
@@ -58,15 +98,15 @@ const handleSubmit = () => {
            <input type="text" name="nameconfirm" id="nameconfirm" v-model="nameconfirm" disabled>
          </div>
          <div class="confirmation-form">
-           <label for="lastname">Acompañante:</label>
-           <input type="text" name="lastname" id="lastname" disabled>
+           <label for="acompañante">Acompañante:</label>
+           <input type="text" name="acompañante" id="acompañante" v-model="acompañante" disabled>
          </div>
          <div class="confirmation-form">
-           <label for="kids">Niños:</label>
-           <input type="number" name="kids" id="kids" disabled>
+           <label for="niños">Niños:</label>
+           <input type="number" name="niños" id="niños" v-model="niños"disabled>
          </div>
          <div class="confirmation-form__btn">
-           <button @click.prevent="showMessage = !showMessage">Confirmar asistencia</button>
+           <button @click="handleConfirm">Confirmar asistencia</button>
          </div>
        </form>
       </div>
