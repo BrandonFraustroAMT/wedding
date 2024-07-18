@@ -2,6 +2,7 @@
 import { type Content } from "@prismicio/client";
 import { ref } from "vue";
 import invitadosService from "../../services/invitados"
+import Swal from "sweetalert2";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -18,10 +19,16 @@ defineProps(
 const showForm = ref(false);
 const name = ref('')
 const disabled = ref(false);
-const nameconfirm = ref('');
-const acompañante = ref('');
+
+const nombreInvitado = ref('');
+const apellidoInvitado = ref('');
+const nombreAcompañante = ref([]);
+const celular = ref('');
+const familia = ref('');
 const niños = ref('');
-const showMessage = ref(false);
+
+const successMessage = ref('');
+const errorMessage = ref('');
 const namesInvitados = ref([]);
 const idFounded = ref(0);
 
@@ -30,38 +37,89 @@ const invitados = async () => {
     const data = await invitadosService.getAll();
     namesInvitados.value = data;
   } catch (error) {
-    console.error('Error al obtener los invitados:', error);
+    //errorMessage.value = 'Error al obtener los invitados'
+    console.error('Error al obtener los invitados');
   }
 }
 invitados();
 
 const handleSubmit = () => {
-  const nameFounded = namesInvitados.value.find(inv => inv.nombre === name.value);
-  console.log(nameFounded);
-  if (nameFounded) {
-    nameconfirm.value = nameFounded.nombre;
-    acompañante.value = nameFounded.acompañante;
-    niños.value = nameFounded.niños;
-    idFounded.value = nameFounded.id;
-    // Aquí puedes realizar otras acciones según tu lógica
+  const nameFounded = namesInvitados.value.filter(inv => inv.invitado_nombre === name.value);
+  const acompañanteFounded = namesInvitados.value.filter(inv => inv.acompanante_nombre === name.value);
+  if (nameFounded.length > 0) {
+    const nombreData = nameFounded[0];
+    /* console.log(nombreData); */
+    idFounded.value = nombreData.ID;
+    const nombreinvitados = nameFounded.map(nf => ({
+      acompañante_nombre: nf.acompanante_nombre,
+      acompañante_apellido: nf.acompanante_apellido,
+    }))
+    nombreInvitado.value = nombreData.invitado_nombre;
+    apellidoInvitado.value = nombreData.invitado_apellido;
+    nombreAcompañante.value = nombreinvitados;
+    celular.value = nombreData.celular;
+    familia.value = nombreData.nombrefamilia;
+    niños.value = nombreData.niños;
   } else {
-    // Si no se encuentra el nombre en la lista de invitados
-    console.log('Nombre no encontrado en la lista de invitados');
+    //console.log('acompañante:', acompañanteFounded);
+    if (acompañanteFounded.length > 0) {
+      //console.log('El acompañante es:', acompañanteFounded);
+      Swal.fire({
+        title: "¿Eres un acompañante?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Solo el invitado puede confirmar asistencia",
+          });
+        }
+      });
+    } else {
+      Swal.fire({
+        title: 'Error',
+        text: 'Nombre no encontrado en la lista de invitados',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+    }
   }
 };
 
 const handleConfirm = async () => {
   const newNoteObject = {
-    nombre: nameconfirm.value,
-    acompañante: acompañante.value,
+    nombre: nombreInvitado.value,
+    apellido: apellidoInvitado.value,
+    celular: celular.value,
+    nombrefamilia: familia.value,
     niños: niños.value,
     confirmacion: "SI",
   }
   try {
     const data = await invitadosService.update(idFounded.value, newNoteObject);
-    console.log(data);
+    if (data) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Confirmación completada",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+    //console.log(data);
   } catch (error) {
-    console.error('Error al confirmar los invitados:', error);
+    Swal.fire({
+        title: 'Error',
+        text: 'Error al confirmar los invitados',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+    //console.error('Error al confirmar los invitados:', error);
   }
 }
 </script>
@@ -93,25 +151,33 @@ const handleConfirm = async () => {
            <button @click="handleSubmit">Buscar</button>
          </div>
 
-         <div class="confirmation-form">
-           <label for="nameconfirm">Nombre:</label>
-           <input type="text" name="nameconfirm" id="nameconfirm" v-model="nameconfirm" disabled>
-         </div>
-         <div class="confirmation-form">
-           <label for="acompañante">Acompañante:</label>
-           <input type="text" name="acompañante" id="acompañante" v-model="acompañante" disabled>
-         </div>
-         <div class="confirmation-form">
-           <label for="niños">Niños:</label>
-           <input type="number" name="niños" id="niños" v-model="niños"disabled>
-         </div>
+         <TABLE BORDER>
+        	<TR>
+        	    <TH>Nombre</TH>
+        	    <TH>Celular</TH>
+        	    <TH>Familia</TH>
+        	    <TH>Niños</TH>
+        	    <TH>Acompañantes</TH>
+        	</TR>
+        	<TR ALIGN=center>
+        	    <TD>{{ nombreInvitado }} {{ apellidoInvitado }}</TD>
+        	    <TD>{{ celular }}</TD>
+        	    <TD>{{ familia }}</TD>
+        	    <TD>{{ niños }}</TD>
+        	    <TD>
+                <div v-for="(acompañante, index) in nombreAcompañante" :key="index">
+                  {{ acompañante.acompañante_nombre }} {{ acompañante.acompañante_apellido }}
+                </div>
+              </TD>
+        	</TR>
+        </TABLE>
          <div class="confirmation-form__btn">
            <button @click="handleConfirm">Confirmar asistencia</button>
          </div>
        </form>
       </div>
-      <div v-if="showMessage">
-        <p>Asistencia confirmada!</p>
+      <div>
+        <p>{{ successMessage || errorMessage }}</p>
       </div>
     </div>
 
