@@ -1,6 +1,7 @@
 import axios from "axios";
 //const baseUrl = "https://notes-sandy-nine.vercel.app/api/notes";
-const baseUrl = "http://localhost:8000/invitados";
+//const baseUrl = "http://localhost:8000/invitados";
+const baseUrl = "https://wedding-backend-eight.vercel.app/invitados";
 
 const getAll = async () => {
   try {
