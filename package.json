@@ -11,6 +11,7 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@nuxtjs/leaflet": "^1.0.14",
     "@prismicio/client": "^7.6.0",
     "@prismicio/vue": "^4.2.2",
     "axios": "^1.7.2",

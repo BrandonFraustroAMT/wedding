@@ -2,7 +2,9 @@ import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/prismic"],
+  modules: ["@nuxtjs/prismic",
+    '@nuxtjs/leaflet'
+  ],
   css: [
     '@/assets/css/reset.css',
     '@/assets/css/global.css'

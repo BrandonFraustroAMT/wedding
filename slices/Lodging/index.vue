@@ -32,8 +32,26 @@ defineProps(
         <div class="lodging-slice__direction" >
           <p class="lodging-slice__text" >{{ slice.primary.direction }}</p>
           <p class="lodging-slice__text" >{{ slice.primary.directionvalue }}</p>
-          <div class="ubication-slice__btn">
+          <!-- <div class="ubication-slice__btn">
             <PrismicLink :field="slice.primary.linkbutton" class="ubication-slice__btn-text">{{ slice.primary.labelbutton }}</PrismicLink>
+          </div> -->
+          <div class="lodging-slice__map">
+            <LMap
+              style="height: 350px"
+              :zoom="6"
+              :center="[47.21322, -1.559482]"
+              :use-global-leaflet="false"
+            >
+              <LTileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+                layer-type="base"
+                name="OpenStreetMap"
+              />
+              <LMarker :lat-lng="[47.21322, -1.559482]">
+                <LPopup> Wedding </LPopup>
+              </LMarker>
+            </LMap>
           </div>
         </div>
         <div class="lodging-slice__counter" >
@@ -76,10 +94,15 @@ defineProps(
   }
 
   .lodging-slice__direction {
+    width: 50%;
     padding-right: 40px;
+  }
+  .lodging-slice__map {
+    width: 100%;
   }
 
   .lodging-slice__counter {
+    width: 30%;
     padding-left: 40px;
   }
 
@@ -96,7 +119,7 @@ defineProps(
       font-size: 1rem;
     }
     .lodging-slice__availability {
-      width: 50%;
+      width: 70%;
     }
   }
   @media (min-width: 980px) {
