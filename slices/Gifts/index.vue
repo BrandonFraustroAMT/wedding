@@ -26,14 +26,8 @@ defineProps(
             <PrismicRichText :field="slice.primary.title" />
           </h2>
         </div>
-        <div class="schedule-slice__content-img">
-          <PrismicImage :field="slice.primary.imagedecoration" />
-        </div>
         <div class="ubication-slice__btn">
           <PrismicLink :field="slice.primary.linkbutton" class="ubication-slice__btn-text">{{ slice.primary.labelbutton }}</PrismicLink>
-        </div>
-        <div class="schedule-slice__content-img">
-          <PrismicImage :field="slice.primary.imagedecoration2" />
         </div>
       </div>
     </div>
@@ -63,6 +57,8 @@ defineProps(
 
   .gift-slice__title {
     font-size: 1.5rem;
+    font-family: 'Belleza', sans-serif;
+    margin-bottom: 30px
   }
 
   @media (min-width: 620px) {

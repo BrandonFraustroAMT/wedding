@@ -71,12 +71,14 @@ defineProps(
 
   .ubication-slice__title h2 {
     font-size: 2.5rem;
+    font-family: 'Belleza', sans-serif;
     text-transform: uppercase;
     color: #333333;
   }
 
   .ubication-slice__subtitle {
     font-size: 1.5rem;
+    font-family: 'Belleza', sans-serif;
     text-transform: uppercase;
     color: #333333;
   }
@@ -90,6 +92,7 @@ defineProps(
   
   .ubication-slice__date-text {
     font-size: 1.2rem;
+    font-family: 'Belleza', sans-serif;
     color: #333333;
     margin: 5px 0;
   }
@@ -110,6 +113,7 @@ defineProps(
 
   .ubication-slice__btn-text {
     font-size: 1.2rem;
+    font-family: 'Belleza', sans-serif;
     text-decoration: none;
     color: #fff;
   }

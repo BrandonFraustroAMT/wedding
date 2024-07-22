@@ -62,7 +62,7 @@ defineProps(
   }
 
   .schedule-slice__title {
-    font-family: 'Adelia', sans-serif;
+    font-family: 'Gistesy', sans-serif;
     font-size: 2.5rem;
     padding-bottom: 50px;
   }
@@ -70,7 +70,7 @@ defineProps(
   .schedule-slice__content {
     display: flex;
     flex-direction: column;
-    width: 15%;
+    width: 60%;
   }
 
   .schedule-slice__content-data {
@@ -83,6 +83,8 @@ defineProps(
   .schedule-slice__content-text {
     font-size: 1rem;
     width: 100%;
+    text-align: center;
+    font-family: 'Belleza', sans-serif;
   }
 
   .schedule-slice__content-img {
@@ -94,4 +96,10 @@ defineProps(
     height: 100%;
     object-fit: contain;
   }
+
+  @media (min-width: 600px) {
+    .schedule-slice__content {
+      width: 30%;
+    }
+  } 
 </style>

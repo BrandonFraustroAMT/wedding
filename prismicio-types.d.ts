@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type WeddingDocumentDataSlicesSlice =
+  | CodigoSlice
   | VisionSlice
   | UbicationSlice
   | TimerSlice
@@ -81,6 +82,242 @@ export type WeddingDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = WeddingDocument;
+
+/**
+ * Item in *Codigo → Default → Primary → GroupEllos*
+ */
+export interface CodigoSliceDefaultPrimaryGroupellosItem {
+  /**
+   * Subtitle field in *Codigo → Default → Primary → GroupEllos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellos[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Label1 field in *Codigo → Default → Primary → GroupEllos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellos[].label1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label1: prismic.KeyTextField;
+
+  /**
+   * Label2 field in *Codigo → Default → Primary → GroupEllos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellos[].label2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label2: prismic.KeyTextField;
+
+  /**
+   * Label3 field in *Codigo → Default → Primary → GroupEllos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellos[].label3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label3: prismic.KeyTextField;
+
+  /**
+   * Label4 field in *Codigo → Default → Primary → GroupEllos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellos[].label4
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label4: prismic.KeyTextField;
+
+  /**
+   * Label5 field in *Codigo → Default → Primary → GroupEllos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellos[].label5
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label5: prismic.KeyTextField;
+
+  /**
+   * Label6 field in *Codigo → Default → Primary → GroupEllos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellos[].label6
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label6: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Codigo → Default → Primary → GroupEllas*
+ */
+export interface CodigoSliceDefaultPrimaryGroupellasItem {
+  /**
+   * Subtitle field in *Codigo → Default → Primary → GroupEllas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellas[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Label1 field in *Codigo → Default → Primary → GroupEllas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellas[].label1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label1: prismic.KeyTextField;
+
+  /**
+   * Label2 field in *Codigo → Default → Primary → GroupEllas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellas[].label2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label2: prismic.KeyTextField;
+
+  /**
+   * Label3 field in *Codigo → Default → Primary → GroupEllas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellas[].label3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label3: prismic.KeyTextField;
+
+  /**
+   * Label4 field in *Codigo → Default → Primary → GroupEllas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellas[].label4
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label4: prismic.KeyTextField;
+
+  /**
+   * Label5 field in *Codigo → Default → Primary → GroupEllas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellas[].label5
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label5: prismic.KeyTextField;
+
+  /**
+   * Label6 field in *Codigo → Default → Primary → GroupEllas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellas[].label6
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label6: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Codigo → Default → Primary*
+ */
+export interface CodigoSliceDefaultPrimary {
+  /**
+   * Title field in *Codigo → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *Codigo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupEllos field in *Codigo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellos[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupellos: prismic.GroupField<
+    Simplify<CodigoSliceDefaultPrimaryGroupellosItem>
+  >;
+
+  /**
+   * Image field in *Codigo → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * GroupEllas field in *Codigo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: codigo.default.primary.groupellas[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupellas: prismic.GroupField<
+    Simplify<CodigoSliceDefaultPrimaryGroupellasItem>
+  >;
+}
+
+/**
+ * Default variation for Codigo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CodigoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CodigoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Codigo*
+ */
+type CodigoSliceVariation = CodigoSliceDefault;
+
+/**
+ * Codigo Shared Slice
+ *
+ * - **API ID**: `codigo`
+ * - **Description**: Codigo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CodigoSlice = prismic.SharedSlice<"codigo", CodigoSliceVariation>;
 
 /**
  * Primary content in *Confirmation → Default → Primary*
@@ -1032,6 +1269,12 @@ declare module "@prismicio/client" {
       WeddingDocumentData,
       WeddingDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CodigoSlice,
+      CodigoSliceDefaultPrimaryGroupellosItem,
+      CodigoSliceDefaultPrimaryGroupellasItem,
+      CodigoSliceDefaultPrimary,
+      CodigoSliceVariation,
+      CodigoSliceDefault,
       ConfirmationSlice,
       ConfirmationSliceDefaultPrimary,
       ConfirmationSliceVariation,

@@ -1,0 +1,159 @@
+{
+  "id": "codigo",
+  "type": "SharedSlice",
+  "name": "Codigo",
+  "description": "Codigo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "groupellos": {
+          "type": "Group",
+          "config": {
+            "label": "GroupEllos",
+            "repeat": true,
+            "fields": {
+              "subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Subtitle",
+                  "placeholder": ""
+                }
+              },
+              "label1": {
+                "type": "Text",
+                "config": {
+                  "label": "Label1",
+                  "placeholder": ""
+                }
+              },
+              "label2": {
+                "type": "Text",
+                "config": {
+                  "label": "Label2",
+                  "placeholder": ""
+                }
+              },
+              "label3": {
+                "type": "Text",
+                "config": {
+                  "label": "Label3",
+                  "placeholder": ""
+                }
+              },
+              "label4": {
+                "type": "Text",
+                "config": {
+                  "label": "Label4",
+                  "placeholder": ""
+                }
+              },
+              "label5": {
+                "type": "Text",
+                "config": {
+                  "label": "Label5",
+                  "placeholder": ""
+                }
+              },
+              "label6": {
+                "type": "Text",
+                "config": {
+                  "label": "Label6",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "groupellas": {
+          "type": "Group",
+          "config": {
+            "label": "GroupEllas",
+            "repeat": true,
+            "fields": {
+              "subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Subtitle",
+                  "placeholder": ""
+                }
+              },
+              "label1": {
+                "type": "Text",
+                "config": {
+                  "label": "Label1",
+                  "placeholder": ""
+                }
+              },
+              "label2": {
+                "type": "Text",
+                "config": {
+                  "label": "Label2",
+                  "placeholder": ""
+                }
+              },
+              "label3": {
+                "type": "Text",
+                "config": {
+                  "label": "Label3",
+                  "placeholder": ""
+                }
+              },
+              "label4": {
+                "type": "Text",
+                "config": {
+                  "label": "Label4",
+                  "placeholder": ""
+                }
+              },
+              "label5": {
+                "type": "Text",
+                "config": {
+                  "label": "Label5",
+                  "placeholder": ""
+                }
+              },
+              "label6": {
+                "type": "Text",
+                "config": {
+                  "label": "Label6",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

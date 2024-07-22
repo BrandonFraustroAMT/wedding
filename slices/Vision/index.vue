@@ -78,13 +78,14 @@ onMounted(() => {
   .vision-slice__phrase1 {
     padding: 20px 0;
     font-size: 15px;
+    font-family: 'Belleza', sans-serif;
     text-align: center;
   }
 
   .vision-slice__phrase2 {
     padding-top: 40px;
     font-size: 20px;
-    font-family: 'Adelia', sans-serif;
+    font-family: 'Gistesy', sans-serif;
   }
 
   @media (min-width: 640px) {

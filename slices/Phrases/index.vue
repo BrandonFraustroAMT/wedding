@@ -100,7 +100,7 @@ defineProps(
   }
 
   .phrase-slice__title {
-    font-family: 'Adelia', sans-serif;
+    font-family: 'Gistesy', sans-serif;
     font-size: 2rem;
     text-align: center;
     line-height: 95px;
@@ -108,6 +108,7 @@ defineProps(
   }
   .phrase-slice__subtitle {
     font-size: 1rem;
+    font-family: 'Belleza', sans-serif;
     padding: 0 55px;
     color: #727272;
   }

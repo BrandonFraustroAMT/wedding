@@ -125,6 +125,7 @@ onBeforeUnmount(() => {
   .timer-slice__text h2{
     font-size: 2rem;
     font-weight: 200;
+    font-family: 'Belleza', sans-serif;
     text-align: center;
     text-transform: uppercase;
   }
@@ -133,6 +134,7 @@ onBeforeUnmount(() => {
   }
   .timer-slice__subtitle{
     font-size: 1.5rem;
+    font-family: 'Belleza', sans-serif;
     color: #818181;
     margin-bottom: 32px;
   }
@@ -161,6 +163,7 @@ onBeforeUnmount(() => {
 
   .timer-slice__box-text {
     font-size: 1rem;
+    font-family: 'Belleza', sans-serif;
   }
 
   @media (min-width: 920px) {

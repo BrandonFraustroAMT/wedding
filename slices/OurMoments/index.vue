@@ -70,11 +70,13 @@ defineProps(
   }
   .ourmoments-slice__title h2 {
     font-family: 'Adelia', sans-serif;
+    font-family: 'Gistesy', sans-serif;
     font-size: 1.8rem;
   }
   .ourmoments-slice__subtitle {
     font-size: 1.5rem;
     text-align: center;
+    font-family: 'Belleza', sans-serif;
   }
 
   .ourmoments-slice__column-img {
@@ -120,7 +122,7 @@ defineProps(
       width: 40%;
     }
     .ourmoments-slice__title h2 {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
   @media (min-width: 1280px) {

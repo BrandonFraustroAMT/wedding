@@ -23,6 +23,7 @@ import Lodging from '../slices/Lodging/index.vue'; // Ajusta la ruta según tu e
 import Vision from '../slices/Vision/index.vue'; // Ajusta la ruta según tu estructura de carpetas
 import OurMoments from '../slices/OurMoments/index.vue'; // Ajusta la ruta según tu estructura de carpetas
 import Schedule from '../slices/Schedule/index.vue'; // Ajusta la ruta según tu estructura de carpetas
+import Codigo from '../slices/Codigo/index.vue'; // Ajusta la ruta según tu estructura de carpetas
 import Confirmation from '../slices/Confirmation/index.vue'; // Ajusta la ruta según tu estructura de carpetas
 import Gifts from '../slices/Gifts/index.vue'; // Ajusta la ruta según tu estructura de carpetas
 
@@ -37,6 +38,7 @@ const components = {
   vision: Vision,
   our_moments: OurMoments,
   schedule: Schedule,
+  codigo: Codigo,
   confirmation: Confirmation,
   gifs: Gifts,
 };

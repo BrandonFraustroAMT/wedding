@@ -63,6 +63,7 @@ defineProps(
 
   .lodging-slice__title {
     font-size: 1rem;
+    font-family: 'Belleza', sans-serif;
   }
 
   .lodging-slice__availability {
@@ -84,6 +85,7 @@ defineProps(
 
   .lodging-slice__text {
     font-size: 0.7rem;
+    font-family: 'Belleza', sans-serif;
   }
 
   @media (min-width: 740px) {

@@ -89,13 +89,14 @@ defineProps(
   .main-slice__title h2 {
     color: #fff;
     font-size: 1.5rem;
+    font-family: 'Belleza', sans-serif;
     font-weight: 200;
     text-shadow: #fff 1px 0px 10px;
   }
 
   .main-slice__subtitle {
     margin: 35px 0;
-    font-family: 'Adelia', sans-serif;
+    font-family: 'Gistesy', sans-serif;
     font-size: 3rem;
     line-height: 5rem;
     color: #fff;
@@ -106,6 +107,7 @@ defineProps(
     margin: 35px 0;
     font-size: 1rem;
     color: #fff;
+    font-family: 'Belleza', sans-serif;
     text-align: center;
     text-shadow: #fff 1px 0px 10px;
   }
@@ -116,7 +118,7 @@ defineProps(
     }
 
     .main-slice__subtitle {
-      font-size: 2.5rem;
+      font-size: 4rem;
     }
 
     .main-slice__description {
@@ -130,7 +132,7 @@ defineProps(
     }
 
     .main-slice__subtitle {
-      font-size: 3rem;
+      font-size: 5rem;
     }
 
     .main-slice__description {
@@ -144,7 +146,7 @@ defineProps(
     }
 
     .main-slice__subtitle {
-      font-size: 3rem;
+      font-size: 6rem;
     }
 
     .main-slice__description {
