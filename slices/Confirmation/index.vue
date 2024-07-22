@@ -224,9 +224,6 @@ const handleConfirm = async () => {
                    <div class="confirmation-form__btn">
                      <button @click="handleConfirm">Confirmar asistencia</button>
                    </div>
-                   <div class="confirmation-form__btn">
-                     <button @click.prevent="showForm = false">Cancelar</button>
-                   </div>
                  </div>
                </div>
              </form>
