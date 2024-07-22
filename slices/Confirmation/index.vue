@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type Content } from "@prismicio/client";
-import { ref } from "vue";
+import { ref, Transition } from "vue";
 import invitadosService from "../../services/invitados"
 import Swal from "sweetalert2";
 
@@ -18,7 +18,6 @@ defineProps(
 
 const showForm = ref(false);
 const name = ref('')
-const disabled = ref(false);
 
 const nombreInvitado = ref('');
 const apellidoInvitado = ref('');
@@ -27,8 +26,7 @@ const celular = ref('');
 const familia = ref('');
 const niños = ref('');
 
-const successMessage = ref('');
-const errorMessage = ref('');
+const nameExisted = ref(false);
 const namesInvitados = ref([]);
 const idFounded = ref(0);
 
@@ -60,6 +58,7 @@ const handleSubmit = () => {
     celular.value = nombreData.celular;
     familia.value = nombreData.nombrefamilia;
     niños.value = nombreData.niños;
+    nameExisted.value = true;
   } else {
     //console.log('acompañante:', acompañanteFounded);
     if (acompañanteFounded.length > 0) {
@@ -101,15 +100,24 @@ const handleConfirm = async () => {
     confirmacion: "SI",
   }
   try {
-    const data = await invitadosService.update(idFounded.value, newNoteObject);
-    if (data) {
+    if(nameExisted) {
+      const data = await invitadosService.update(idFounded.value, newNoteObject);
+      if (data) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Confirmación completada",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    } else {
       Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Confirmación completada",
-        showConfirmButton: false,
-        timer: 1500
-      });
+        title: 'Error',
+        text: 'Error al confirmar los invitados',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
     }
     //console.log(data);
   } catch (error) {
@@ -141,44 +149,43 @@ const handleConfirm = async () => {
         </div>
       </div>
       <!-- popup -->
-      <div v-if="showForm" class="confirmation-form__container">
-       <form @submit.prevent="handleSubmit">
-         <div class="confirmation-form">
-           <label for="name">Nombre:</label>
-           <input type="text" name="name" id="name" v-model="name">
-         </div>
-         <div class="confirmation-form__btn">
-           <button @click="handleSubmit">Buscar</button>
-         </div>
-
-         <TABLE BORDER>
-        	<TR>
-        	    <TH>Nombre</TH>
-        	    <TH>Celular</TH>
-        	    <TH>Familia</TH>
-        	    <TH>Niños</TH>
-        	    <TH>Acompañantes</TH>
-        	</TR>
-        	<TR ALIGN=center>
-        	    <TD>{{ nombreInvitado }} {{ apellidoInvitado }}</TD>
-        	    <TD>{{ celular }}</TD>
-        	    <TD>{{ familia }}</TD>
-        	    <TD>{{ niños }}</TD>
-        	    <TD>
-                <div v-for="(acompañante, index) in nombreAcompañante" :key="index">
-                  {{ acompañante.acompañante_nombre }} {{ acompañante.acompañante_apellido }}
-                </div>
-              </TD>
-        	</TR>
-        </TABLE>
-         <div class="confirmation-form__btn">
-           <button @click="handleConfirm">Confirmar asistencia</button>
-         </div>
-       </form>
-      </div>
-      <div>
-        <p>{{ successMessage || errorMessage }}</p>
-      </div>
+      <Transition name="fade-scale">
+        <div v-if="showForm" class="confirmation-form__container">
+         <form @submit.prevent="handleSubmit">
+             <div class="confirmation-form">
+               <label for="name">Nombre:</label>
+               <input type="text" name="name" id="name" v-model="name">
+             </div>
+             <div class="confirmation-form__btn">
+               <button @click="handleSubmit">Buscar</button>
+             </div>
+    
+             <TABLE BORDER>
+              <TR>
+                  <TH>Nombre</TH>
+                  <TH>Celular</TH>
+                  <TH>Familia</TH>
+                  <TH>Niños</TH>
+                  <TH>Acompañantes</TH>
+              </TR>
+              <TR ALIGN=center>
+                  <TD>{{ nombreInvitado }} {{ apellidoInvitado }}</TD>
+                  <TD>{{ celular }}</TD>
+                  <TD>{{ familia }}</TD>
+                  <TD>{{ niños }}</TD>
+                  <TD>
+                    <div v-for="(acompañante, index) in nombreAcompañante" :key="index">
+                      {{ acompañante.acompañante_nombre }} {{ acompañante.acompañante_apellido }}
+                    </div>
+                  </TD>
+              </TR>
+            </TABLE>
+             <div class="confirmation-form__btn">
+               <button @click="handleConfirm">Confirmar asistencia</button>
+             </div>
+           </form>
+          </div>
+        </Transition>
     </div>
 
   </section>
@@ -261,6 +268,13 @@ const handleConfirm = async () => {
   .confirmation-form__btn button:hover{
     cursor: pointer;
     background-color: #beb1a2;
+  }
+
+  .fade-scale-enter-active, .fade-scale-leave-active {
+    transition: transform 300ms ease-out;
+  }
+  .fade-scale-enter, .fade-scale-leave-to /* .fade-scale-leave-active en versiones anteriores de Vue */ {
+    transform: translate(0px, 0px) scale(0.8, 0.8);
   }
 
   @media (min-width: 640px) {

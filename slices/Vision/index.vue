@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { type Content } from "@prismicio/client";
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Registrar ScrollTrigger con GSAP
+gsap.registerPlugin(ScrollTrigger);
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
 defineProps(
@@ -11,6 +15,25 @@ defineProps(
     "context",
   ]),
 );
+
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  gsap.fromTo(
+    '.vision-slice__phrase2',
+    { scale: 0.5 }, // Estado inicial
+    {
+      scale: 2, // Estado final
+      scrollTrigger: {
+        trigger: '.vision-slice__phrase2',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true,
+        markers: false,
+      },
+    }
+  );
+});
 </script>
 
 <template>
