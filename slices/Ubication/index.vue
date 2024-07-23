@@ -124,13 +124,13 @@ defineProps(
   }
 
   .ubication-slice__btn {
-    background-color: #dccdb9;
+    background-color: #86895D;
     padding: 10px 5px;
     border-radius: 10px;
   }
   .ubication-slice__btn:hover {
     cursor: pointer;
-    background-color: #beb1a2;
+    background-color: #8d8f79;
   }
 
   .ubication-slice__btn-text {

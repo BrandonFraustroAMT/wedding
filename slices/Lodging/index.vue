@@ -46,7 +46,7 @@ defineProps(
                 name="OpenStreetMap"
               />
               <LMarker :lat-lng="[21.324691696008742, -89.42391814854852]">
-                <LPopup> Techno Hotel </LPopup>
+                <LPopup> Tecno Hotel </LPopup>
               </LMarker>
             </LMap>
           </div>
