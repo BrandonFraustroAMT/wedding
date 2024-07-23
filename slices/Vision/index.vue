@@ -43,9 +43,6 @@ onMounted(() => {
     class="vision-slice"
   >
     <div class="vision-slice__container">
-      <div class="vision-slice__column ubication-slice__img" >
-        <PrismicImage :field="slice.primary.imagedecoration" />
-      </div>
       <div class="vision-slice__column vision-slice__phrase1" >
         {{ slice.primary.phrase1 }}
       </div>
@@ -90,7 +87,7 @@ onMounted(() => {
 
   @media (min-width: 640px) {
     .vision-slice__phrase1 {
-      font-size: 20px;
+      font-size: 25px;
     }
 
     .vision-slice__phrase2 {
@@ -99,7 +96,7 @@ onMounted(() => {
   }
   @media (min-width: 940px) {
     .vision-slice__phrase1 {
-      font-size: 26px;
+      font-size: 35px;
     }
 
     .vision-slice__phrase2 {

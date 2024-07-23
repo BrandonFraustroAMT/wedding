@@ -72,13 +72,12 @@ defineProps(
 
   .main-slice__slider-image {
     width: 100%;
-    height: auto;
   }
 
   .main-slice__slider-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .main-slice__container {
