@@ -80,7 +80,7 @@ defineProps(
     position: relative;
     justify-content: center;
     align-items: center;
-    top: -63%;
+    top: -70%;
     margin: 0 10px;
   }
   .main-slice__title {

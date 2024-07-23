@@ -68,7 +68,7 @@ onMounted(() => {
 <style>
 .loading-overlay {
   width: 100%;
-  height: 800px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
