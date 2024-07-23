@@ -3,7 +3,9 @@
     <!-- Comprueba si el documento está cargado -->
     <SliceZone v-if="document && document.data" :slices="document.data.slices" :components="components" />
     <div v-else class="loading-overlay">
-      <video ref="loadingVideo" src="/assets/video/Denni & FranJavi.mp4" autoplay muted loop @loadedmetadata="handleVideoLoad"></video>
+      <div class="video-container">
+        <video ref="loadingVideo" src="/assets/video/Denni & FranJavi.mp4" autoplay muted loop @loadedmetadata="handleVideoLoad"></video>
+      </div>
     </div>
   </div>
 </template>
@@ -66,10 +68,14 @@ onMounted(() => {
 <style>
 .loading-overlay {
   width: 100%;
-  height: 700px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.video-container {
+  width: 30%;
+  height: 100px
 }
 
 .loading-overlay video {
