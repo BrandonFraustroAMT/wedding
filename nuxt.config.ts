@@ -3,7 +3,8 @@ import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/prismic",
-    '@nuxtjs/leaflet'
+    '@nuxtjs/leaflet',
+    'vue3-carousel-nuxt'
   ],
   css: [
     '@/assets/css/reset.css',

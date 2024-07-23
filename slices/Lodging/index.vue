@@ -30,8 +30,10 @@ defineProps(
       </div>
       <div class="lodging-slice__availability" >
         <div class="lodging-slice__direction" >
-          <p class="lodging-slice__text" >{{ slice.primary.direction }}</p>
-          <p class="lodging-slice__text" >{{ slice.primary.directionvalue }}</p>
+          <div class="lodging-slice__counter" >
+            <p class="lodging-slice__text" >{{ slice.primary.count }}</p>
+            <p class="lodging-slice__text" >{{ slice.primary.countvalue }}</p>
+          </div>
           <div class="lodging-slice__map">
             <LMap
               style="height: 350px"
@@ -50,14 +52,10 @@ defineProps(
               </LMarker>
             </LMap>
           </div>
+          <div class="ubication-slice__data ubication-slice__btn" >
+            <PrismicLink :field="slice.primary.linkbutton" class="ubication-slice__btn-text">{{ slice.primary.labelbutton }}</PrismicLink>
+          </div>
         </div>
-        <div class="lodging-slice__counter" >
-          <p class="lodging-slice__text" >{{ slice.primary.count }}</p>
-          <p class="lodging-slice__text" >{{ slice.primary.countvalue }}</p>
-        </div>
-      </div>
-      <div class="ubication-slice__data ubication-slice__btn" >
-        <PrismicLink :field="slice.primary.linkbutton" class="ubication-slice__btn-text">{{ slice.primary.labelbutton }}</PrismicLink>
       </div>
     </div>
   </section>
@@ -80,8 +78,15 @@ defineProps(
   }
 
   .lodging-slice__title {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .lodging-slice__title h2{
     font-size: 1rem;
+    font-weight: 200;
     font-family: 'Gistesy', sans-serif;
+    text-align: center;
   }
 
   .lodging-slice__availability {
@@ -95,12 +100,18 @@ defineProps(
 
   .lodging-slice__direction {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .lodging-slice__map {
     width: 100%;
+    padding-bottom: 20px;
   }
 
   .lodging-slice__counter {
+    padding: 20px 0;
     width: 100%;
   }
 
@@ -110,7 +121,7 @@ defineProps(
   }
 
   @media (min-width: 740px) {
-    .lodging-slice__title {
+    .lodging-slice__title h2{
       font-size: 2rem;
     }
     .lodging-slice__text {
@@ -122,11 +133,9 @@ defineProps(
     }
     .lodging-slice__direction {
       width: 50%;
-      padding-right: 40px;
     }
     .lodging-slice__counter {
-      width: 30%;
-      padding-left: 40px;
+      width: 80%;
     }
   }
   @media (min-width: 980px) {

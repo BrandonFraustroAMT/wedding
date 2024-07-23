@@ -89,9 +89,10 @@ defineProps(
   }
 
   .ubication-slice__title h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    font-weight: 200;
     font-family: 'Gistesy', sans-serif;
-    color: #333333;
+    text-align: center;
   }
   .ubication-slice__map {
     margin: 30px 0;

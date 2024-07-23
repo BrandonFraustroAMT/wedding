@@ -21,11 +21,17 @@ defineProps(
     <div class="main-slice">
       <!-- SLIDER -->
       <div class="main-slice__slider">
-        <template v-for="item in slice.primary.groupmain">
-          <div class="main-slice__slider-image">
-            <PrismicImage :field="item.image" />
-          </div>
-        </template>
+        <Carousel :autoplay="3000" :wrap-around="true">
+          <Slide v-for="(item, index) in slice.primary.groupmain" :key="index">
+            <div class="main-slice__slider-image">
+              <PrismicImage :field="item.image" />
+            </div>
+          </Slide>
+        
+          <template #addons>
+            <Pagination />
+          </template>
+        </Carousel>
       </div>
       <div class="main-slice__container">
         <div class="main-slice__title">
@@ -60,11 +66,13 @@ defineProps(
     width: 100%;
     height: 100%;
     display: flex; /* Usar flexbox para asegurar que los hijos ocupen el 100% */
+    justify-content: center;
+    align-items: center;
   }
 
   .main-slice__slider-image {
-    flex: 1 0 100%; /* Permite que cada imagen ocupe todo el contenedor */
-    position: relative; /* Necesario para posicionar la imagen */
+    width: 100%;
+    height: auto;
   }
 
   .main-slice__slider-image img {
