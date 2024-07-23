@@ -63,6 +63,15 @@ const fetchData = async () => {
 onMounted(() => {
   fetchData();
 });
+
+
+useSeoMeta({
+  title: 'Dennifranjaviwedding',
+  ogTitle: 'Dennifranjaviwedding',
+  description: 'Boda de Denisse y Francisco',
+  ogDescription: 'Boda de Denisse y Francisco',
+  ogImage: '/assets/img/DF.jpg',
+})
 </script>
 
 <style>
