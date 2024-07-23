@@ -28,9 +28,6 @@ defineProps(
             </div>
           </Slide>
         
-          <template #addons>
-            <Pagination />
-          </template>
         </Carousel>
       </div>
       <div class="main-slice__container">
@@ -64,20 +61,31 @@ defineProps(
 
   .main-slice__slider {
     width: 100%;
-    height: 100%;
-    display: flex; /* Usar flexbox para asegurar que los hijos ocupen el 100% */
-    justify-content: center;
-    align-items: center;
+    height: 100vh; /* Asegura que el contenedor del slider ocupe toda la pantalla */
   }
 
   .main-slice__slider-image {
     width: 100%;
+    height: 100%;
+    display: flex; /* Asegura que el contenido interno se alinee correctamente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
   }
 
   .main-slice__slider-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;/* Asegura que las imágenes cubran todo el área del contenedor */
+  }
+  .carousel, .carousel__slide, .carousel__viewport, .carousel__track {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .main-slice__container {
@@ -87,8 +95,7 @@ defineProps(
     position: relative;
     justify-content: center;
     align-items: center;
-    top: -70%;
-    margin: 0 10px;
+    top: -80%;
   }
   .main-slice__title {
     margin: 35px 0;
@@ -111,6 +118,7 @@ defineProps(
   }
 
   .main-slice__description {
+    width: 80%;
     margin: 35px 0;
     font-size: 1rem;
     color: #fff;
@@ -130,6 +138,9 @@ defineProps(
 
     .main-slice__description {
       font-size: 1rem;
+    }
+    .main-slice__container {
+      top: -70%;
     }
   }
 

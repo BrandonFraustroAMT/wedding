@@ -42,7 +42,7 @@ defineProps(
         <LMap
         style="height: 350px"
         :zoom="14"
-        :center="[21.32337393643182, -89.44031750401858]"
+        :center="[21.324691696008742, -89.42391814854852]"
         :use-global-leaflet="false"
         >
           <LTileLayer
@@ -52,7 +52,7 @@ defineProps(
             name="OpenStreetMap"
             />
         
-          <LMarker :lat-lng="[21.32337393643182, -89.44031750401858]">
+          <LMarker :lat-lng="[21.324691696008742, -89.42391814854852]">
             <LPopup> San Benito </LPopup>
           </LMarker>
         </LMap>
@@ -107,6 +107,7 @@ defineProps(
   }
 
   .ubication-slice__date {
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,6 +119,7 @@ defineProps(
     font-family: 'Belleza', sans-serif;
     color: #333333;
     margin: 5px 0;
+    text-align: center;
   }
 
   .ubication-slice__img {

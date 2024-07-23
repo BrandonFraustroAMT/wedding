@@ -74,7 +74,7 @@ onMounted(() => {
 
   .vision-slice__phrase1 {
     padding: 20px 0;
-    font-size: 15px;
+    font-size: 2rem;
     font-family: 'Belleza', sans-serif;
     text-align: center;
   }

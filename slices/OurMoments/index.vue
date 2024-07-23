@@ -69,7 +69,7 @@ defineProps(
     padding-bottom: 30px;
   }
   .ourmoments-slice__title h2 {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 200;
     font-family: 'Gistesy', sans-serif;
     text-align: center;

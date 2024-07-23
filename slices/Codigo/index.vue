@@ -129,6 +129,7 @@ defineProps(
     font-family: 'Belleza', sans-serif;
     padding: 5px 0;
     font-size: 1rem;
+    text-align: center;
   }
 
   @media (min-width: 900px) {
