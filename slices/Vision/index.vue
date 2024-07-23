@@ -19,20 +19,32 @@ defineProps(
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  gsap.fromTo(
-    '.vision-slice__phrase2',
-    { scale: 0.5 }, // Estado inicial
-    {
-      scale: 2, // Estado final
-      scrollTrigger: {
-        trigger: '.vision-slice__phrase2',
-        start: 'top bottom',
-        end: 'top top',
-        scrub: true,
-        markers: false,
-      },
+  const applyAnimations = () => {
+    if (window.innerWidth >= 690) {
+      gsap.fromTo(
+        '.vision-slice__phrase2',
+        { scale: 0.5 }, // Estado inicial
+        {
+          scale: 2, // Estado final
+          scrollTrigger: {
+            trigger: '.vision-slice__phrase2',
+            start: 'top bottom',
+            end: 'top top',
+            scrub: true,
+            markers: false,
+          },
+        }
+      );
     }
-  );
+  }
+  applyAnimations();
+  
+  window.addEventListener('resize', applyAnimations);
+  
+  // Cleanup event listener on unmount
+  return () => {
+    window.removeEventListener('resize', applyAnimations);
+  };
 });
 </script>
 
@@ -81,7 +93,7 @@ onMounted(() => {
 
   .vision-slice__phrase2 {
     padding-top: 40px;
-    font-size: 20px;
+    font-size: 1.7rem;
     font-family: 'Gistesy', sans-serif;
   }
 

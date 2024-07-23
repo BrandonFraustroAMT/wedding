@@ -20,49 +20,62 @@ defineProps(
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  gsap.fromTo(
-    '.img1',
-    { y: -100 }, // Estado inicial
-    {
-      y: 100, // Estado final
-      scrollTrigger: {
-        trigger: '.img1',
-        start: "top 70%",
-        end: 'top top',
-        scrub: true,
-        markers: false,
-      },
+  const applyAnimations = () => {
+    if (window.innerWidth >= 690) {
+      gsap.fromTo(
+        '.img1',
+        { y: -100 }, // Estado inicial
+        {
+          y: 100, // Estado final
+          scrollTrigger: {
+            trigger: '.img1',
+            start: "top 70%",
+            end: 'top top',
+            scrub: true,
+            markers: false,
+          },
+        }
+      );
+      gsap.fromTo(
+        '.img3',
+        { y: 100 }, // Estado inicial
+        {
+          y: -100, // Estado final
+          scrollTrigger: {
+            trigger: '.img3',
+            start: "top 90%",
+            end: 'top top',
+            scrub: true,
+            markers: false,
+          },
+        }
+      );
+      gsap.fromTo(
+        '.img4',
+        { y: -80 }, // Estado inicial
+        {
+          y: 100, // Estado final
+          scrollTrigger: {
+            trigger: '.img4',
+            start: "top 70%",
+            end: 'top top',
+            scrub: true,
+            markers: false,
+          },
+        }
+      );
     }
-  );
-  gsap.fromTo(
-    '.img3',
-    { y: 100 }, // Estado inicial
-    {
-      y: -100, // Estado final
-      scrollTrigger: {
-        trigger: '.img3',
-        start: "top 90%",
-        end: 'top top',
-        scrub: true,
-        markers: false,
-      },
-    }
-  );
-  gsap.fromTo(
-    '.img4',
-    { y: -80 }, // Estado inicial
-    {
-      y: 100, // Estado final
-      scrollTrigger: {
-        trigger: '.img4',
-        start: "top 70%",
-        end: 'top top',
-        scrub: true,
-        markers: false,
-      },
-    }
-  );
+  }
+  applyAnimations();
+  
+  window.addEventListener('resize', applyAnimations);
+  
+  // Cleanup event listener on unmount
+  return () => {
+    window.removeEventListener('resize', applyAnimations);
+  };
 });
+
 </script>
 
 <template>
