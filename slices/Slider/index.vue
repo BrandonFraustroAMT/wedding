@@ -112,7 +112,7 @@ onMounted(() => {
 
   .slider-slice__images {
     width: 20%;
-    height: 30%;
+    height: 25%;
   }
   .slider-slice__images img {
     width: 100%;

@@ -34,6 +34,7 @@ const idFounded = ref(0);
 const invitados = async () => {
   try {
     const data = await invitadosService.getAll();
+    console.log(data);
     namesInvitados.value = data;
   } catch (error) {
     //errorMessage.value = 'Error al obtener los invitados'
@@ -54,8 +55,14 @@ const handleClean = () => {
 }
 
 const handleSubmit = () => {
-  const nameFounded = namesInvitados.value.filter(inv => inv.invitado_nombre === name.value);
-  const acompañanteFounded = namesInvitados.value.filter(inv => inv.acompanante_nombre === name.value);
+  const [firstName, lastName] = name.value.split(' ');
+  const nameFounded = namesInvitados.value.filter(inv => 
+  inv.invitado_nombre === firstName && inv.invitado_apellido === lastName
+  );
+
+  const acompañanteFounded = namesInvitados.value.filter(inv => 
+    inv.acompanante_nombre === firstName && inv.acompanante_apellido === lastName
+  );
   if (nameFounded.length > 0) {
     const nombreData = nameFounded[0];
     /* console.log(nombreData); */
@@ -293,7 +300,7 @@ const handleConfirm = async () => {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-85%, -89%);
+    transform: translate(-62%, -89%);
     z-index: 10;
   }
 
@@ -374,6 +381,9 @@ const handleConfirm = async () => {
     }
     .confirmation-form__container {
       width: 60%;
+    }
+    .confirmation-form__container {
+      transform: translate(-85%, -89%);
     }
   }
   @media (min-width: 920px) {

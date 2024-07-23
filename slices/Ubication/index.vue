@@ -38,29 +38,30 @@ defineProps(
       <div class="ubication-slice__data ubication-slice__img" >
         <PrismicImage :field="slice.primary.image_decoration" />
       </div>
-      <!-- <div class="ubication-slice__data ubication-slice__btn" >
-        <PrismicLink :field="slice.primary.linkbutton" class="ubication-slice__btn-text">
-          {{ slice.primary.button }}
-        </PrismicLink>
-      </div> -->
       <div class="ubication-slice__map">
         <LMap
-          style="height: 350px"
-          :zoom="6"
-          :center="[47.21322, -1.559482]"
-          :use-global-leaflet="false"
+        style="height: 350px"
+        :zoom="14"
+        :center="[21.32337393643182, -89.44031750401858]"
+        :use-global-leaflet="false"
         >
           <LTileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
             layer-type="base"
             name="OpenStreetMap"
-          />
-          <LMarker :lat-lng="[47.21322, -1.559482]">
-            <LPopup> Wedding </LPopup>
+            />
+        
+          <LMarker :lat-lng="[21.32337393643182, -89.44031750401858]">
+            <LPopup> San Benito </LPopup>
           </LMarker>
         </LMap>
       </div>
+      <!-- <div class="ubication-slice__data ubication-slice__btn" >
+        <PrismicLink :field="slice.primary.linkbutton" class="ubication-slice__btn-text">
+          {{ slice.primary.button }}
+        </PrismicLink>
+      </div> -->
     </div>
   </section>
 </template>
@@ -89,7 +90,7 @@ defineProps(
 
   .ubication-slice__title h2 {
     font-size: 2.5rem;
-    font-family: 'Belleza', sans-serif;
+    font-family: 'Gistesy', sans-serif;
     text-transform: uppercase;
     color: #333333;
   }
@@ -153,7 +154,7 @@ defineProps(
   }
   @media (min-width: 920px) {
     .ubication-slice__img {
-      width: 35%;
+      width: 15%;
     }
   }
 </style>

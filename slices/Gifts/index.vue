@@ -57,7 +57,7 @@ defineProps(
 
   .gift-slice__title {
     font-size: 1.5rem;
-    font-family: 'Belleza', sans-serif;
+    font-family: 'Gistesy', sans-serif;
     margin-bottom: 30px
   }
 

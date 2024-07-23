@@ -77,8 +77,10 @@ defineProps(
   }
 
   .codigo-slice__subtitle {
+    width: 90%;
     font-family: 'Belleza', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    text-align: center;
   }
 
   .codigo-slice__columns {
@@ -91,7 +93,7 @@ defineProps(
   }
 
   .codigo-slice__column1 {
-    width: 25%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,7 +111,7 @@ defineProps(
     object-fit: cover;
   }
   .codigo-slice__column3 {
-    width: 25%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,10 +136,16 @@ defineProps(
       flex-direction: row;
       justify-content: space-around;
     }
+    .codigo-slice__column1 {
+      width: 25%;
+    }
     .codigo-slice__column2 {
       width: 40%;
       height: 400px;
       background-color: rgb(176, 176, 176);
+    }
+    .codigo-slice__column3 {
+      width: 25%;
     }
   }
 

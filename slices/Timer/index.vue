@@ -125,7 +125,7 @@ onBeforeUnmount(() => {
   .timer-slice__text h2{
     font-size: 2rem;
     font-weight: 200;
-    font-family: 'Belleza', sans-serif;
+    font-family: 'Gistesy', sans-serif;
     text-align: center;
     text-transform: uppercase;
   }

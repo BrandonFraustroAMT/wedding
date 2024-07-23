@@ -32,14 +32,11 @@ defineProps(
         <div class="lodging-slice__direction" >
           <p class="lodging-slice__text" >{{ slice.primary.direction }}</p>
           <p class="lodging-slice__text" >{{ slice.primary.directionvalue }}</p>
-          <!-- <div class="ubication-slice__btn">
-            <PrismicLink :field="slice.primary.linkbutton" class="ubication-slice__btn-text">{{ slice.primary.labelbutton }}</PrismicLink>
-          </div> -->
           <div class="lodging-slice__map">
             <LMap
               style="height: 350px"
-              :zoom="6"
-              :center="[47.21322, -1.559482]"
+              :zoom="15"
+              :center="[21.324691696008742, -89.42391814854852]"
               :use-global-leaflet="false"
             >
               <LTileLayer
@@ -48,8 +45,8 @@ defineProps(
                 layer-type="base"
                 name="OpenStreetMap"
               />
-              <LMarker :lat-lng="[47.21322, -1.559482]">
-                <LPopup> Wedding </LPopup>
+              <LMarker :lat-lng="[21.324691696008742, -89.42391814854852]">
+                <LPopup> Techno Hotel </LPopup>
               </LMarker>
             </LMap>
           </div>
@@ -58,6 +55,9 @@ defineProps(
           <p class="lodging-slice__text" >{{ slice.primary.count }}</p>
           <p class="lodging-slice__text" >{{ slice.primary.countvalue }}</p>
         </div>
+      </div>
+      <div class="ubication-slice__data ubication-slice__btn" >
+        <PrismicLink :field="slice.primary.linkbutton" class="ubication-slice__btn-text">{{ slice.primary.labelbutton }}</PrismicLink>
       </div>
     </div>
   </section>
@@ -81,33 +81,31 @@ defineProps(
 
   .lodging-slice__title {
     font-size: 1rem;
-    font-family: 'Belleza', sans-serif;
+    font-family: 'Gistesy', sans-serif;
   }
 
   .lodging-slice__availability {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
-    width: 60%;
+    width: 70%;
     padding-bottom: 40px;
   }
 
   .lodging-slice__direction {
-    width: 50%;
-    padding-right: 40px;
+    width: 100%;
   }
   .lodging-slice__map {
     width: 100%;
   }
 
   .lodging-slice__counter {
-    width: 30%;
-    padding-left: 40px;
+    width: 100%;
   }
 
   .lodging-slice__text {
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-family: 'Belleza', sans-serif;
   }
 
@@ -120,6 +118,15 @@ defineProps(
     }
     .lodging-slice__availability {
       width: 70%;
+      flex-direction: row;
+    }
+    .lodging-slice__direction {
+      width: 50%;
+      padding-right: 40px;
+    }
+    .lodging-slice__counter {
+      width: 30%;
+      padding-left: 40px;
     }
   }
   @media (min-width: 980px) {
