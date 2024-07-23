@@ -70,10 +70,11 @@ defineProps(
     align-items: center;
   }
 
-  .codigo-slice__title { 
+  .codigo-slice__title h2{ 
+    font-size: 3rem;
+    font-weight: 200;
     font-family: 'Gistesy', sans-serif;
-    font-size: 2.5rem;
-    padding-bottom: 50px;
+    text-align: center;
   }
 
   .codigo-slice__subtitle {
@@ -119,8 +120,10 @@ defineProps(
   }
 
   .codigo-slice__text1 {
-    font-family: 'Gistesy', sans-serif;
     font-size: 2rem;
+    font-weight: 200;
+    font-family: 'Gistesy', sans-serif;
+    text-align: center;
   }
   .codigo-slice__text {
     font-family: 'Belleza', sans-serif;

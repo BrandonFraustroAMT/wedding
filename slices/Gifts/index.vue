@@ -55,10 +55,11 @@ defineProps(
     width: 70%;
   }
 
-  .gift-slice__title {
-    font-size: 1.5rem;
+  .gift-slice__title h2{
+    font-size: 3rem;
+    font-weight: 200;
     font-family: 'Gistesy', sans-serif;
-    margin-bottom: 30px
+    text-align: center;
   }
 
   @media (min-width: 620px) {

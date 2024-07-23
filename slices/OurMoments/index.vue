@@ -69,9 +69,10 @@ defineProps(
     padding-bottom: 30px;
   }
   .ourmoments-slice__title h2 {
-    font-family: 'Adelia', sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
     font-family: 'Gistesy', sans-serif;
-    font-size: 1.8rem;
+    text-align: center;
   }
   .ourmoments-slice__subtitle {
     font-size: 1.5rem;
