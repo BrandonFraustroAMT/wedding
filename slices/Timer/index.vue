@@ -127,7 +127,6 @@ onBeforeUnmount(() => {
     font-weight: 200;
     font-family: 'Gistesy', sans-serif;
     text-align: center;
-    text-transform: uppercase;
   }
   .timer-slice__img{
     width: 70%;
@@ -168,7 +167,7 @@ onBeforeUnmount(() => {
 
   @media (min-width: 920px) {
     .timer-slice__text h2{
-      font-size: 3rem;
+      font-size: 4rem;
     }
     .timer-slice__img{
       width: 35%;

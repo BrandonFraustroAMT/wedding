@@ -91,7 +91,6 @@ defineProps(
   .ubication-slice__title h2 {
     font-size: 2.5rem;
     font-family: 'Gistesy', sans-serif;
-    text-transform: uppercase;
     color: #333333;
   }
   .ubication-slice__map {
