@@ -3,8 +3,7 @@
     <!-- Comprueba si el documento está cargado -->
     <SliceZone v-if="document && document.data" :slices="document.data.slices" :components="components" />
     <div v-else class="loading-overlay">
-      <div class="spinner"></div>
-      <p>Loading...</p>
+      <video ref="loadingVideo" src="/assets/video/Denni & FranJavi.mp4" autoplay muted loop @loadedmetadata="handleVideoLoad"></video>
     </div>
   </div>
 </template>
@@ -57,6 +56,7 @@ const fetchData = async () => {
   }
 };
 
+
 // Llama a fetchData cuando el componente se monte
 onMounted(() => {
   fetchData();
@@ -65,27 +65,16 @@ onMounted(() => {
 
 <style>
 .loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-overlay video {
   width: 100%;
   height: 100%;
-  background-color: var(--backgroundBlack);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 4px solid #007bff;
-  border-top-color: transparent;
-  animation: spin 1s infinite linear;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+  object-fit: contain;
 }
 </style>
