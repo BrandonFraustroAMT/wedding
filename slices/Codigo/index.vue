@@ -35,6 +35,9 @@ defineProps(
               <div class="codigo-slice__text">{{ item.label5 }}</div>
               <div class="codigo-slice__text">{{ item.label6 }}</div>
             </template>
+            <div class="codigo-slice__img">
+              <img src="/assets/img/Colorhombre.jpg" alt="">
+            </div>
           </div>
           <div class="codigo-slice__column2">
             <PrismicImage :field="slice.primary.image" />
@@ -49,6 +52,9 @@ defineProps(
               <div class="codigo-slice__text">{{ item.label5 }}</div>
               <div class="codigo-slice__text">{{ item.label6 }}</div>
             </template>
+            <div class="codigo-slice__img">
+              <img src="/assets/img/Colormujer.jpg" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -117,6 +123,10 @@ defineProps(
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .codigo-slice__img {
+    width: 50%;
   }
 
   .codigo-slice__text1 {

@@ -53,7 +53,7 @@ defineProps(
             />
         
           <LMarker :lat-lng="[21.324691696008742, -89.42391814854852]">
-            <LPopup> San Benito </LPopup>
+            <LPopup> Tecno Hotel Beach </LPopup>
           </LMarker>
         </LMap>
       </div>
