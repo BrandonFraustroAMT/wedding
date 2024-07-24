@@ -192,7 +192,7 @@ const handleConfirm = async () => {
       <!-- popup -->
         <Transition>
           <div v-if="showForm" class="confirmation-form__container">
-           <form @submit.prevent="handleSubmit">
+           <form @submit.prevent="handleSubmit" class="form">
               <div class="confirmation-form">
                 <label for="name">Nombre:</label>
                 <input type="text" name="name" id="name" v-model="name">
@@ -206,33 +206,55 @@ const handleConfirm = async () => {
                 </div>
               </div>
               
-               <div v-if="nameExisted">
-                 <TABLE BORDER class="table">
-                   <TR>
-                       <TH>Nombre</TH>
-                       <TH>Celular</TH>
-                       <TH>Familia</TH>
-                       <TH>Niños</TH>
-                       <TH>Acompañantes</TH>
-                   </TR>
-                   <TR ALIGN=center>
-                       <TD>{{ nombreInvitado }} {{ apellidoInvitado }}</TD>
-                       <TD>{{ celular }}</TD>
-                       <TD>{{ familia }}</TD>
-                       <TD>{{ niños }}</TD>
-                       <TD>
-                         <div v-for="(acompañante, index) in nombreAcompañante" :key="index">
-                           {{ acompañante.acompañante_nombre }} {{ acompañante.acompañante_apellido }}
-                         </div>
-                       </TD>
-                   </TR>
-                 </TABLE>
-                 <div class="confirmation-form__buttons">
-                   <div class="confirmation-form__btn">
-                     <button @click="handleConfirm">Confirmar asistencia</button>
-                   </div>
-                 </div>
-               </div>
+                <div v-if="nameExisted">
+                  <div class="form-confirmation">
+                    <div class="form-confirmation__label">
+                      <label for="acompañante">Nombre del (los) acompañante(s):</label>
+                      <div class="nombres-acompañante">
+                        <div v-for="(acompañante, index) in nombreAcompañante" :key="index" >
+                          {{ acompañante.acompañante_nombre }} {{ acompañante.acompañante_apellido }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-confirmation__label">
+                      <label for="familia">Nombre de la familia:</label>
+                      <div class="form-text">
+                        {{ familia }}
+                      </div>
+                    </div>
+                    <div class="form-confirmation__label">
+                      <label for="niños">Cantidad de niños:</label>
+                      <div class="form-text">
+                        {{ niños }}
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <TABLE BORDER class="table">
+                    <TR>
+                        <TH>Nombre</TH>
+                        <TH>Celular</TH>
+                        <TH>Familia</TH>
+                        <TH>Niños</TH>
+                        <TH>Acompañantes</TH>
+                    </TR>
+                    <TR ALIGN=center>
+                        <TD>{{ nombreInvitado }} {{ apellidoInvitado }}</TD>
+                        <TD>{{ celular }}</TD>
+                        <TD>{{ familia }}</TD>
+                        <TD>{{ niños }}</TD>
+                        <TD>
+                          <div v-for="(acompañante, index) in nombreAcompañante" :key="index">
+                            {{ acompañante.acompañante_nombre }} {{ acompañante.acompañante_apellido }}
+                          </div>
+                        </TD>
+                    </TR>
+                  </TABLE> -->
+                  <div class="confirmation-form__buttons">
+                    <div class="confirmation-form__btn">
+                      <button @click="handleConfirm">Confirmar asistencia</button>
+                    </div>
+                  </div>
+                </div>
              </form>
             </div>
         </Transition>
@@ -286,6 +308,9 @@ const handleConfirm = async () => {
     font-family: 'Belleza', sans-serif;
   }
 
+  .form {
+    width: 80%;
+  }
   .confirmation-form__container {
     width: 80%;
     height: 400px;
@@ -316,36 +341,61 @@ const handleConfirm = async () => {
     font-family: 'Belleza', sans-serif;
   }
   .confirmation-form input{
-    font-size: 0.6rem;
+    font-size: 1rem;
+    font-family: 'Belleza', sans-serif;
+  }
+
+  .form-confirmation__label {
+    font-size: 1rem;
+    font-family: 'Belleza', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .form-confirmation__label label{
+    text-align: end;
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    font-size: 0.8rem;
+  }
+  .form-text {
+    width: 35%;
+    text-align: justify;
   }
 
   .confirmation-form__btn{
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    padding: 10px 0;
+    padding: 10px 10px;
     font-family: 'Belleza', sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   .confirmation-form__btn button{
-    background-color: #DCCEB9;
-    border: 1px solid #DCCEB9;
+    background-color: #86895D;
+    border: 1px solid #86895D;
     padding: 10px 20px;
     color: #fff;
     border-radius: 10px;
   }
   .confirmation-form__btn button:hover{
     cursor: pointer;
-    background-color: #beb1a2;
+    background-color: #8d8f79;
+    border: 1px solid #8d8f79;
   }
 
-  .table {
-    width: 100%;
+  .nombres-acompañante {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
   }
+  
   .confirmation-form__buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   .v-enter-active,
@@ -364,6 +414,9 @@ const handleConfirm = async () => {
     }
     .confirmation-slice__title h2{
       font-size: 2rem;
+    }
+    .form {
+      width: 50%;
     }
   
     .confirmation-slice__subtitle {
@@ -384,6 +437,13 @@ const handleConfirm = async () => {
     }
     .confirmation-form__container {
       transform: translate(-85%, -89%);
+    }
+    .nombres-acompañante {
+      width: 35%;
+    }
+    .form-confirmation__label label{
+      width: 60%;
+      font-size: 1rem;
     }
   }
   @media (min-width: 920px) {
