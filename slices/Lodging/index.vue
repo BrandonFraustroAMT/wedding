@@ -32,23 +32,34 @@ defineProps(
         <div class="lodging-slice__direction" >
           <div class="lodging-slice__counter" >
             <p class="lodging-slice__text" >{{ slice.primary.count }}</p>
-            <p class="lodging-slice__text" >{{ slice.primary.countvalue }}</p>
+            <p class="lodging-slice__text-hotel" >Villa Esmeralda</p>
+            <p class="lodging-slice__text-hotel" >iik ka ha</p>
+            <p class="lodging-slice__text-hotel" >Villas Wayak</p>
+            <p class="lodging-slice__text-hotel" >Casa Aguita de Coco</p>
           </div>
           <div class="lodging-slice__map">
             <LMap
               style="height: 350px"
-              :zoom="15"
-              :center="[21.324691696008742, -89.42391814854852]"
+              :zoom="17"
+              :center="[21.325350865282058, -89.42300991971206]"
               :use-global-leaflet="false"
             >
               <LTileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
                 layer-type="base"
                 name="OpenStreetMap"
               />
-              <LMarker :lat-lng="[21.324691696008742, -89.42391814854852]">
-                <LPopup> Tecno Hotel Beach </LPopup>
+              <LMarker :lat-lng="[21.32568529307778, -89.42329133120278]">
+                <LPopup> Villa Esmeralda </LPopup>
+              </LMarker>
+              <LMarker :lat-lng="[21.32568279885437, -89.42328160607468]">
+                <LPopup> iik ka ha </LPopup>
+              </LMarker>
+              <LMarker :lat-lng="[21.325441710657806, -89.42122016982195]">
+                <LPopup> Villas Wayak </LPopup>
+              </LMarker>
+              <LMarker :lat-lng="[21.32521144776838, -89.4232785865089]">
+                <LPopup> Casa Aguita de Coco </LPopup>
               </LMarker>
             </LMap>
           </div>
@@ -119,6 +130,11 @@ defineProps(
     font-size: 1rem;
     font-family: 'Belleza', sans-serif;
   }
+  .lodging-slice__text-hotel{
+    font-size: 1rem;
+    font-family: 'Belleza', sans-serif;
+    color: rgb(107, 107, 107);
+  }
 
   @media (min-width: 740px) {
     .lodging-slice__title h2{
@@ -145,5 +161,8 @@ defineProps(
     .lodging-slice__text {
       font-size: 1.5rem;
     }
+    .odging-slice__text-hotel{
+    font-size: 1.5rem;
+  }
   }
 </style>
