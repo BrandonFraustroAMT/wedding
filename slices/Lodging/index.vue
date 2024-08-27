@@ -40,7 +40,7 @@ defineProps(
           <div class="lodging-slice__map">
             <LMap
               style="height: 350px"
-              :zoom="17"
+              :zoom="16"
               :center="[21.325350865282058, -89.42300991971206]"
               :use-global-leaflet="false"
             >
