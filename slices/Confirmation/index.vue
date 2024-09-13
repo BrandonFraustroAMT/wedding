@@ -28,6 +28,7 @@ const familia = ref('');
 const niños = ref('');
 
 const nameExisted = ref(false);
+const isConfirmated = ref(false);
 const namesInvitados = ref([]);
 const idFounded = ref(0);
 
@@ -65,7 +66,12 @@ const handleSubmit = () => {
   );
   if (nameFounded.length > 0) {
     const nombreData = nameFounded[0];
-    /* console.log(nombreData); */
+    if(nombreData.confirmacion === 'SI'){
+      isConfirmated.value = true;
+    } else {
+      isConfirmated.value = false;
+    }
+    /* console.log('NombreData',nombreData); */
     idFounded.value = nombreData.ID;
     const nombreinvitados = nameFounded.map(nf => ({
       acompañante_nombre: nf.acompanante_nombre,
@@ -122,22 +128,31 @@ const handleConfirm = async () => {
   }
   try {
     if(nameExisted) {
-      const data = await invitadosService.update(idFounded.value, newNoteObject);
-      if (data) {
+      if(isConfirmated.value == false){
+        const data = await invitadosService.update(idFounded.value, newNoteObject);
+        if (data) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Confirmación completada",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          name.value = ''
+          nombreInvitado.value = '';
+          apellidoInvitado.value = '';
+          nombreAcompañante.value = [];
+          celular.value = '';
+          familia.value = '';
+          niños.value = '';
+        }
+      }else{
         Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Confirmación completada",
-          showConfirmButton: false,
-          timer: 1500
-        });
-        name.value = ''
-        nombreInvitado.value = '';
-        apellidoInvitado.value = '';
-        nombreAcompañante.value = [];
-        celular.value = '';
-        familia.value = '';
-        niños.value = '';
+          title: 'Ups!',
+          text: 'El invitado ya realizó la confirmación anteriormente',
+          icon: 'warning',
+          confirmButtonText: 'Ok'
+        })
       }
     } else {
       Swal.fire({
